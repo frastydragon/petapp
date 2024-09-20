@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+
+//Meissen Hsu
+// Samuel Akinniyi
 void main() {
 
   runApp(MaterialApp(
@@ -18,7 +21,10 @@ class _DigitalPetAppState extends State<DigitalPetApp> {
   int hungerLevel = 50;
   String emotion = '';
   bool enable = true;
-
+  Color color = const Color.fromARGB(255, 255, 0, 0);
+  int red = 0;
+  int b = 0;
+  int g = 0;
   Timer? timer;
   int seconds=10;
 
@@ -50,6 +56,8 @@ class _DigitalPetAppState extends State<DigitalPetApp> {
     }
     );
   }
+
+
 // Function to decrease hunger and update happiness when feeding the pet
   void _feedPet() {
     setState(() {
@@ -61,12 +69,15 @@ class _DigitalPetAppState extends State<DigitalPetApp> {
   void _updateEmotion(){
     if (happinessLevel > 70) {
       emotion = "Happy 😊😊";
+      color = const Color.fromARGB(255, 10, 151, 50);
     } 
       else if (happinessLevel < 30) {
       emotion = "Sad 😢" ;
+      color = const Color.fromARGB(255, 255, 0, 0);
     }
     else if (happinessLevel > 30 || happinessLevel < 70 ) {
       emotion = "Neutral 😑";
+      color = const Color.fromARGB(255, 206, 227, 48);
     }
   
   }
@@ -130,6 +141,18 @@ class _DigitalPetAppState extends State<DigitalPetApp> {
         ),
         SizedBox(height: 16.0),
 
+        Container(
+          width: 60,
+          height: 60,
+          decoration:  BoxDecoration(
+            
+            shape: BoxShape.circle,
+            color: color
+          ),
+          
+
+        ),
+        SizedBox(height: 16.0),
         Text(
           'Happiness Level: $happinessLevel',
           style: TextStyle(fontSize: 20.0),
