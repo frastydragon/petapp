@@ -31,6 +31,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   //bool enable = true;
   String cityName = 'City Name';
+  String cityNameUpdate = "";
+  int temp = 87;
+  String weather = 'rain';
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +66,6 @@ class _MyHomePageState extends State<MyHomePage> {
 	          onPressed: (){ 
               setState(() {
                 //enable = false;
-
               });
               
             },
@@ -77,32 +79,39 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(height: 16.0),
 
             ElevatedButton(
-              onPressed:(){} ,
+              onPressed:(){
+                cityNameUpdate = cityName;
+                temp = 99;
+                weather = 'Sunny';
+                setState(() {                 
+                });
+                
+              } ,
               child: const Text('Get The Weather'),
             ),
             SizedBox(height: 16.0),
 
 
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'City Name   ',
-                  style: TextStyle(fontSize: 20.0),
+                  'City Name: $cityNameUpdate  ',
+                  style: const TextStyle(fontSize: 20.0),
                   )       ,
-                SizedBox(height: 16.0),
+                const SizedBox(height: 16.0),
 
                 Text(
-                  'Temprature   ',
-                  style: TextStyle(fontSize: 20.0),
+                  'Temprature: $temp F  ',
+                  style: const TextStyle(fontSize: 20.0),
                   )       ,
-                SizedBox(height: 16.0),
+                const SizedBox(height: 16.0),
 
                 Text(
-                  'Weather Condition   ',
-                  style: TextStyle(fontSize: 20.0),
+                  'Weather Condition: $weather  ',
+                  style: const TextStyle(fontSize: 20.0),
                   )       ,
-                SizedBox(height: 16.0),
+                const SizedBox(height: 16.0),
 
                 Text(
                   ' Etc.',
