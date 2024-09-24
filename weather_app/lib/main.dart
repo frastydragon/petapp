@@ -91,6 +91,18 @@ class _MyHomePageState extends State<MyHomePage> {
               } ,
               child: const Text('Get The Weather'),
             ),
+             ElevatedButton(
+              onPressed:(){
+                cityNameUpdate = cityName;
+                temp = 99;
+                weather = 'Sunny';
+                zipcode = 30096;
+                setState(() {                 
+                });
+                
+              } ,
+              child: const Text('Get The 7 day Weather'),
+            ),
             SizedBox(height: 16.0),
             const SizedBox(height: 16.0),
             const Text("Monday"),
@@ -125,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 
               ],
             ),
-            const SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
             const Text("Tuesday"),
 
             Row(
@@ -314,6 +326,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 
               ],
             ),
+          
            
           ]
 
